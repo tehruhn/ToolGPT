@@ -1,10 +1,17 @@
 # 🛠️ ToolGPT 🤖
 
-Welcome to ToolGPT! This package is a powerful, user-friendly wrapper for OpenAI's GPT models that enables you to easily incorporate advanced AI-powered functionalities into your chatbots or virtual assistants.
+Introducing ToolGPT, your power tool to tap into the groundbreaking function-calling abilities of OpenAI's GPT-4-0613 and GPT-3.5-turbo-0613 models! 🚀
 
-ToolGPT gives you the ability to leverage the power of OpenAI's cutting-edge GPT models to perform tasks that require understanding and generating human-like text. 
+With ToolGPT, developers now have the capability to describe Python functions to the model, enabling the model to intelligently output a JSON object containing arguments to call those functions. This revolutionary feature seamlessly integrates GPT's powerful capabilities with external tools and APIs in a whole new way, offering a highly reliable method to extract structured data.
 
-With ToolGPT, you can get your chatbot or virtual assistant to not only chat like a human, but also execute functions based on chat commands! 🚀🚀
+What's even more exciting? The GPT models have been expertly fine-tuned to not only detect when a function needs to be called based on user's input, but also to respond with a JSON that conforms to the function's signature. This groundbreaking function calling ability makes it possible for developers to interact with the model in a structured way, effectively transforming natural language queries into executable function calls. 
+
+From creating chatbots that can call external tools to answer questions, converting natural language into API calls or database queries, to extracting structured data from text - the possibilities with ToolGPT are limitless.
+
+And the icing on the cake? All of this can be done with ANY custom Python function that you define, simply by writing a good docstring. Yes, you heard it right! You can define any Python function and run it LOCALLY on your machine without the need to share your data with OpenAI. ToolGPT is like having an intelligent system that decides when and where to call APIs, all while ensuring the privacy and security of your data. 🛡️ 
+
+Welcome to the future of AI interaction with ToolGPT! 🚀🚀
+
 
 ## 📥 Installation
 
@@ -21,29 +28,34 @@ Once you have ToolGPT installed, you can use it as follows:
 ```
 from ToolGPT import ChatGPTWithFunctions
 
-# Define your functions
-def add(x, y):
-    """Add two numbers."""
-    return x + y
+# Define your functions with good docstrings in NumpyCode format
+def add(a, b):
+    """
+    Adds Two Numbers
 
-def sub(x, y):
-    """Subtract two numbers."""
-    return x - y
+    Parameters
+    ----------
+    a : integer
+        number to be added
+    b : integer
+        number to be added
 
-# Create a functions dictionary
-functions_dict = {
-    "add": add,
-    "sub": sub
-}
+    Returns
+    -------
+    integer
+        sum
+    """
+    return a + b
+
 
 # Instantiate the class
-wrapper = ChatGPTWithFunctions(functions_dict)
+wrapper = ChatGPTWithFunctions()
 
 # Define a prompt
-prompt = "The user says: 'What is 5 plus 3?'"
+prompt = "What is five plus ten?"
 
 # Use the chatbot
-ans = wrapper.prompt_with_functions(prompt, [add, sub])
+ans = wrapper.prompt_with_functions(prompt, [add])
 print(ans)
 ```
 
