@@ -59,6 +59,39 @@ ans = wrapper.prompt_with_functions(prompt, [add])
 print(ans)
 ```
 
+## 🎉 Cool Examples 🚀
+
+ToolGPT isn't just about chat – it's about supercharging chat with the power of function calls! Let's have a look at two exciting examples that demonstrate ToolGPT's capabilities to a whole new level:
+
+### 🧮 Algebra Capabilities (algebra_example) 🤓
+
+Ever wished your chatbot could solve algebraic equations? Now it can! With ToolGPT, you can make ChatGPT solve math problems by leveraging the power of Python functions. Check out the `algebra_example` directory for an enlightening example:
+
+```
+├── algebra_example
+│   ├── algebraExample.py
+│   └── algebraMethods.py
+```
+
+In this example, the `algebraMethods.py` file contains custom Python functions for solving algebraic problems. The `algebraExample.py` file showcases how ToolGPT uses these functions to add algebraic capabilities to a chatbot. Run the `algebraExample.py` to see how ChatGPT can now solve math problems for you!
+
+### 🎙️ PowerPoint Presentation Capabilities (powerpoint_example) 🖥️
+
+Yes, you read that right. ToolGPT can even help in automating the creation of PowerPoint presentations! 🎉
+
+Explore the `powerpoint_example` directory for an example that's worth a thousand slides:
+
+```
+├── powerpoint_example
+│   ├── powerpointExample.py
+│   └── powerpointMethods.py
+```
+
+In this example, `powerpointMethods.py` contains Python functions that interact with Microsoft's PowerPoint application. The `powerpointExample.py` file demonstrates how ToolGPT uses these functions to create PowerPoint presentations based on user instructions. With this, creating PowerPoint presentations is as easy as chatting!
+
+With ToolGPT, the possibilities are endless. Create more Python functions, and ToolGPT will help you incorporate them into your chatbot. It's like having a chatbot on steroids, all in the comfort of your Python environment!
+
+
 ## 📚 Documentation
 
 You can find more detailed documentation in the code itself!
