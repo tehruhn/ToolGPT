@@ -87,10 +87,22 @@ Explore the `powerpoint_example` directory for an example that's worth a thousan
 │   └── powerpointMethods.py
 ```
 
+
 In this example, `powerpointMethods.py` contains Python functions that interact with Microsoft's PowerPoint application. The `powerpointExample.py` file demonstrates how ToolGPT uses these functions to create PowerPoint presentations based on user instructions. With this, creating PowerPoint presentations is as easy as chatting!
 
 With ToolGPT, the possibilities are endless. Create more Python functions, and ToolGPT will help you incorporate them into your chatbot. It's like having a chatbot on steroids, all in the comfort of your Python environment!
 
+### 🗄️ SQL Example: Interacting with a SQLite Database 📊
+
+This cool example showcases the ability of ToolGPT to interact with a SQLite database, performing queries and returning meaningful results. 🎉
+
+The SQLite example is located in the `sql_example` directory. The directory structure is as follows:
+
+```
+├── sql_example
+│   ├── sqlExample.py
+│   └── sqlMethods.py
+```
 
 ## 📚 Documentation
 
