@@ -10,17 +10,40 @@ from pptx.dml.color import RGBColor
 
 COMPLETION_MODEL = "gpt-3.5-turbo-0613"
 
-def create_presentation(arguments):
-    filename = re.search(r'"filename": "(.*?)"', str(arguments)).group(1)
+def create_presentation(filename):
+    """
+    Creates a new PowerPoint presentation
+
+    Parameters
+    ----------
+    filename : string
+        The name of the PowerPoint file to be created
+
+    Returns
+    -------
+    idk
+    """
     prs = Presentation()
     prs.save(filename)
     print(f"Presentation '{filename}' created.")
 
-def add_slide_with_bullets(arguments):
-    filename = re.search(r'"filename": "(.*?)"', str(arguments)).group(1)
-    title = re.search(r'"title": "(.*?)"', str(arguments)).group(1)
-    bullet_points_text = re.search(r'"bullet_points_text": "(.*?)"', str(arguments)).group(1)
+def add_slide_with_bullets(filename, title, bullet_points_text):
+    """
+    Adds a slide with bullet points to an existing PowerPoint presentation
 
+    Parameters
+    ----------
+    filename : string
+        The name of the PowerPoint file to add a slide to
+    title : string
+        The title of the slide
+    bullet_points_text : string
+        The bullet points for the slide, separated by newline
+
+    Returns
+    -------
+    idk
+    """
     bullet_points = bullet_points_text.split("\\n")
     bullet_points = [elem.strip() for elem in bullet_points]
     prs = Presentation(filename)

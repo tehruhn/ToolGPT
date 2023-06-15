@@ -5,7 +5,8 @@ import json
 import os
 
 from dotenv import load_dotenv
-from methods import add, mul, sub
+# from methods import add, mul, sub
+from presentationMethods import create_presentation, add_slide_with_bullets
 
 def parse_docstring(function):
     doc = inspect.getdoc(function)
@@ -118,6 +119,9 @@ def prompt_with_functions(prompt, functions, COMPLETION_MODEL="gpt-3.5-turbo-061
 if __name__ == "__main__":
     load_dotenv()
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    prompt = "What is five plus ten minus fifteen times two?"
-    ans = prompt_with_functions(prompt, [add, sub, mul])
+    # prompt = "What is five plus ten minus fifteen times two?"
+    # ans = prompt_with_functions(prompt, [add, sub, mul])
+    prompt = "Make a 5 page presentation about bananas."
+    ans = prompt_with_functions(prompt, [create_presentation, add_slide_with_bullets])
+    
     print(ans)
