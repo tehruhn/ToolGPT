@@ -8,7 +8,7 @@ What's even more exciting? The GPT models have been expertly fine-tuned to not o
 
 From creating chatbots that can call external tools to answer questions, converting natural language into API calls or database queries, to extracting structured data from text - the possibilities with ToolGPT are limitless.
 
-And the icing on the cake? All of this can be done with ANY custom Python function that you define, simply by writing a good docstring. Yes, you heard it right! You can define any Python function and run it LOCALLY on your machine without the need to share your data with OpenAI. ToolGPT is like having an intelligent system that decides when and where to call APIs, all while ensuring the privacy and security of your data. 🛡️ 
+And the icing on the cake? **All of this can be done with ANY custom Python function that you define, simply by writing a good docstring. Yes, you heard it right! You can define any Python function and run it LOCALLY on your machine without the need to share your data with OpenAI.** ToolGPT is like having an intelligent system that decides when and where to call APIs, all while ensuring the privacy and security of your data. 🛡️ 
 
 Welcome to the future of AI interaction with ToolGPT! 🚀🚀
 
