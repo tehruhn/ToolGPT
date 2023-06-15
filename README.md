@@ -104,6 +104,13 @@ The SQLite example is located in the `sql_example` directory. The directory stru
 │   └── sqlMethods.py
 ```
 
+- `sqlMethods.py`: This file contains the Python functions that interact with the SQLite database.
+
+- `sqlExample.py`: This is the main script you'll run. It utilizes `sqlMethods.py` and integrates those functions with ToolGPT.
+
+- `sales_data.db`: This is a SQLite database populated with some sample sales data. The database is setup and populated using the `setup_database` function in the `sqlMethods.py` file.
+
+
 ## 📚 Documentation
 
 You can find more detailed documentation in the code itself!
