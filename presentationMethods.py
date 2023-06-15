@@ -1,14 +1,10 @@
 import collections 
 import collections.abc
 
-import re
-import openai
 from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.enum.text import MSO_ANCHOR, MSO_AUTO_SIZE, PP_ALIGN
 from pptx.dml.color import RGBColor
-
-COMPLETION_MODEL = "gpt-3.5-turbo-0613"
 
 def create_presentation(filename):
     """
@@ -89,51 +85,3 @@ def add_slide_with_bullets(filename, title, bullet_points_text):
 
     prs.save(filename)
     print(f"Slide added to the presentation '{filename}'.")
-
-
-def get_completion(messages):
-    response = openai.ChatCompletion.create(
-        model=COMPLETION_MODEL,
-        messages=messages,
-        functions=[
-            {
-                "name": "create_presentation",
-                "description": "Creates a new PowerPoint presentation",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "filename": {
-                            "type": "string",
-                            "description": "The name of the PowerPoint file to be created",
-                        },
-                    },
-                    "required": ["filename"],
-                },
-            },
-            {
-                "name": "add_slide_with_bullets",
-                "description": "Adds a slide with bullet points to an existing PowerPoint presentation",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "filename": {
-                            "type": "string",
-                            "description": "The name of the PowerPoint file to add a slide to",
-                        },
-                        "title": {
-                            "type": "string",
-                            "description": "The title of the slide",
-                        },
-                        "bullet_points_text": {
-                            "type": "string",
-                            "description": "The bullet points for the slide, separated by periods",
-                        },
-                    },
-                    "required": ["filename", "title", "bullet_points_text"],
-                },
-            },
-        ],
-        temperature=0,
-    )
-
-    return response
