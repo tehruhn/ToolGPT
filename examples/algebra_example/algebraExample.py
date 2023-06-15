@@ -1,8 +1,9 @@
-from dotenv import load_dotenv
-from algebraMethods import add, mul, sub
-from wrapper import ChatGPTWithFunctions
+from ToolGPT import ChatGPTWithFunctions
+
 import os
 import openai
+from dotenv import load_dotenv
+from algebraMethods import add, mul, sub
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
